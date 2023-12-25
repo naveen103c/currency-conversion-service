@@ -1,5 +1,6 @@
-package com.microservices;
+package com.microservices.controller;
 
+import com.microservices.dto.CurrencyConversion;
 import com.microservices.service.CurrencyConversionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class CurrencyConversionController {
     @GetMapping("/from/{from}/to/{to}/quantity/{quantity}")
     public CurrencyConversion retrieveConvertedValue(@PathVariable String from, @PathVariable String to, @PathVariable int quantity){
         log.info("retrieve Currency conversion from-"+from+" ,to-"+to);
-        CurrencyConversion currencyConversion=new CurrencyConversion(1L,from,to, 80.0,quantity,1800,env.getProperty("local.server.port"));
+        CurrencyConversion currencyConversion = currencyConversionService.generateConversionAmt(from,to,quantity);
         return currencyConversion;
     }
 }
