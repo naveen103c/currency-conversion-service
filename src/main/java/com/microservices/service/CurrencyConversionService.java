@@ -20,7 +20,9 @@ public class CurrencyConversionService {
 //        getForObject
 //        CurrencyExchange currencyExchange = restTemplate.getForObject("http://localhost:9081/currency-exchange/from/"+from+"/to/"+to, CurrencyExchange.class);
 //        getForEntity
-        ResponseEntity<CurrencyExchange> currencyExchangeEntity = restTemplate.getForEntity("http://localhost:9081/currency-exchange/from/" + from + "/to/" + to, CurrencyExchange.class);
+//        ResponseEntity<CurrencyExchange> currencyExchangeEntity = restTemplate.getForEntity("http://localhost:9081/currency-exchange/from/" + from + "/to/" + to, CurrencyExchange.class);
+//        Removing Host and Port of Microservices
+        ResponseEntity<CurrencyExchange> currencyExchangeEntity = restTemplate.getForEntity("http://CURRENCY-EXCHANGE-SERVICE/currency-exchange/from/" + from + "/to/" + to, CurrencyExchange.class);
         currencyConversion=new CurrencyConversion();
         currencyConversion.setFrom(from);
         currencyConversion.setTo(to);
