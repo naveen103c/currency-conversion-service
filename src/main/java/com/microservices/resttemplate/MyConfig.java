@@ -1,4 +1,4 @@
-package com.microservices.resttemplate.config;
+package com.microservices.resttemplate;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
