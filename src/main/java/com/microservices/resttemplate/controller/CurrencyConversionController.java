@@ -1,7 +1,7 @@
-package com.microservices.controller;
+package com.microservices.resttemplate.controller;
 
 import com.microservices.dto.CurrencyConversion;
-import com.microservices.service.CurrencyConversionService;
+import com.microservices.resttemplate.service.CurrencyConversionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.math.BigDecimal;
-import java.util.logging.Logger;
 
 @RestController
 @Slf4j

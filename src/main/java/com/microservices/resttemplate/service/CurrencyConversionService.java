@@ -1,4 +1,4 @@
-package com.microservices.service;
+package com.microservices.resttemplate.service;
 
 import com.microservices.dto.CurrencyConversion;
 import com.microservices.dto.CurrencyExchange;
