@@ -6,6 +6,32 @@ spring:
   config:
     import: optional:configserver:http://localhost:8888
 
+# Actuator Resilience configuration properties
+management:
+  health:
+    circuitbreakers:
+      enabled : true
+  endpoints:
+    web:
+      exposure:
+        include: health
+    health:
+      show-details: always
+# Resilience configuration properties
+resilience4j:
+  circuitbreaker:
+    instance:
+      conversionExchangeCircuitBreaker:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 6s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
+
 #eureka:
 #  instance:
 #    prefer-ip-address: true
